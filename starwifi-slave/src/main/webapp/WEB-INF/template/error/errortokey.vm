@@ -1,0 +1,88 @@
+#set($layout = '/layout/blank.vm')
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="zh-CN">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="wed, 26 feb 1997 08:21:57 gmt">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title> $!head_title</title>
+
+    <link rel="icon" href="${rc.contextPath}/static/images/basic/gmallico.png"/>
+    <link rel="shortcut icon" href="${rc.contextPath}/static/images/basic/gmallico32.ico" type="image/x-icon" sizes="32*32"/>
+    <link rel="shortcut icon" href="${rc.contextPath}/static/images/basic/gmallico64.ico" type="image/x-icon" sizes="64*64"/>
+
+</head>
+<style>
+    .errortokey {
+        width: 620px;
+        margin: 100px auto 0;
+    }
+
+    .errortokey img{
+        display: block;
+        width: auto;
+        margin: 0 auto;
+    }
+    .errortokey h6 {
+        font-size: 20px;
+        /*font-weight: normal;*/
+        color: #cc0202;
+        text-align: center;
+    }
+
+    .errortokey p{
+        font-size: 15px;
+        color: #c3c3c3;
+        text-align: center;
+    }
+
+    .errortokey a {
+        display: block;
+        color: white;
+        text-align: center;
+        background-color: #cc0b0b;
+        border-radius: 6px;
+        width: 180px;
+        height: 42px;
+        line-height: 42px;
+        margin: 80px auto 0;
+        text-decoration: none;
+    }
+</style>
+<body>
+<div class="errortokey">
+    <!--404-->
+    <img src="${rc.contextPath}/static/images/basic/error.png">
+    <h6>数据已提交，请等待！</h6>
+    <p><b id="second">5</b>秒后页面自动跳回</p>
+##    <a href="/index">立即返回主页</a>
+</div>
+
+<script type="text/javascript">
+    var t=5;//设定跳转的时间
+    setInterval("refer()",1000); //启动1秒定时
+    function refer(){
+        if(t==0){
+            location="${rc.contextPath}$!{gotoURL}"; //#设定跳转的链接地址
+        }
+        document.getElementById('second').innerHTML=t; // 显示倒计时
+        t--; // 计数器递减
+    };
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+
+<!-- BEGIN HEAD -->
+    #parse('/layout/head.vm')
+<!-- END HEADER -->
+<body>
+    <!-- BEGIN TOP -->
+    #parse('/layout/top-default.vm')
+    <!-- END TOP -->
+
+<!-- BEGIN CONTAINER -->
+<section>
+    <div class="gui_main">
+        $screen_content
+    </div>
+    <div class="gui_fastnav">
+        <dl>
+            <dt onmouseover="showWord(this)"><a class="iconfont" href="$!{url}" target="_blank">&#xe605;</a></dt>
+            <dd>
+                <a>在线客服</a>
+            </dd>
+        </dl>
+        <dl>
+            <dt onmouseout="hideWord(this)" onmouseover="showCartNum(this)"><a class="iconfont" href="$!{rc.contextPath}/cart/myCart" target="_blank">&#xe6e4;</a></dt>
+            <dd>
+                <a></a>
+            </dd>
+        </dl>
+        <dl>
+            <dt onmouseover="showWord(this)" onmouseout="hideWord(this)><a class="iconfont" href="#gmall_top">&#xe606;</a></dt>
+            <dd>
+                <a>返回顶部</a>
+            </dd>
+        </dl>
+    </div>
+</section>
+<!-- END CONTAINER -->
+
+<!-- BEGING FOOTER -->
+    #parse('/layout/footer.vm')
+<!-- END FOOTER -->
+</body>
+</html>
+<script>
+    function showWord(x){
+        $(x).next().show();
+    }
+    function hideWord(x){
+        $(x).next().hide();
+    }
+    //显示购物车的数量
+    function showCartNum(x){
+        $.ajax({
+            type: 'post',
+            url: '${rc.contextPath}/cart/myCartNum',
+            data: {},
+            dataType:"json",
+            async:false,
+            success: function (data) {
+                //未登录
+                if(data=="-2"){
+                    $(x).next().find("a").text("请先登录");
+                }
+                else if(data=="-1"){//服务器错误
+                    $(x).next().find("a").text("ERROR");
+                }
+                else{//正常
+                    $(x).next().find("a").text("购物车("+data+")");
+                }
+                $(x).next().show();
+            }
+        });
+    }
+</script>

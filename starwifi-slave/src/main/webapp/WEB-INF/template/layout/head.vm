@@ -1,0 +1,29 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="zh-CN">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="wed, 26 feb 1997 08:21:57 gmt">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title> $!head_title</title>
+
+    <link rel="icon" href="${rc.contextPath}/static/images/basic/gmallico.png?v1.0" />
+    <link rel="shortcut icon" href="${rc.contextPath}/static/images/basic/gmallico-32.ico" type="image/x-icon" sizes="32*32"/>
+    <link rel="shortcut icon" href="${rc.contextPath}/static/images/basic/gmallico-64.ico" type="image/x-icon" sizes="64*64"/>
+
+    <!--线上调整统一版本号v=inline1.0-->
+    <link href="${rc.contextPath}/static/css/gmallbasic.css?v=inline1.1" rel="stylesheet" type="text/css">
+
+    <link href="${rc.contextPath}/static/css/guibasic.css?v=inline1.1" rel="stylesheet" type="text/css">
+    <link href="${rc.contextPath}/static/css/gmallpublic.css?v=inline2.2" rel="stylesheet" type="text/css">
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="${rc.contextPath}/static/script/gmall-basic.js?v=inline1.1" type="text/javascript"></script>
+
+    <script src="${rc.contextPath}/static/script/ui-select.js"></script>
+
+</head>

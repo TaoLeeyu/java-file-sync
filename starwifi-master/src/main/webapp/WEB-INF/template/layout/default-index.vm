@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+
+<!-- BEGIN HEAD -->
+    #parse('/layout/head.vm')
+<!-- END HEADER -->
+<body>
+<!-- BEGIN TOP -->
+    #parse('/layout/top-default.vm')
+<!-- END TOP -->
+
+<!-- BEGIN CONTAINER -->
+<section>
+    $screen_content
+</section>
+<!-- END CONTAINER -->
+
+<!-- BEGING FOOTER -->
+    #parse('/layout/footer.vm')
+<!-- END FOOTER -->
+</body>
+</html>

@@ -1,0 +1,23 @@
+#**
+ * 仅有顶部条、底部栏，无导航栏的模板
+ * 版本号：17年度版
+ * 创建于 2017/10/16 @xming
+ * *#
+<!DOCTYPE html>
+<html>
+<head>
+    #parse('/layout/newhead.vm')
+    <link href="${rc.contextPath}/static/css/layout.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    #parse('/layout/new-header.vm')
+</header>
+<main>
+    $screen_content
+</main>
+<footer>
+    #parse('/layout/new-footer.vm')
+</footer>
+</body>
+</html>

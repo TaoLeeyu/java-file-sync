@@ -1,0 +1,80 @@
+<div class="gui_leftnav">
+    <dl>
+        <dt>
+            <i class="iconfont">&#xe628;</i>
+            <b>会员中心</b>
+        </dt>
+        <dd>
+            <ul>
+                <li>
+                    <a href="/member/accountinfo">基本信息</a>
+                </li>
+                <li>
+                    <a href="/member/address">地址信息</a>
+                </li>
+                <li>
+                    <a href="/member/packet?bonus=1">我的红包</a>
+                </li>
+
+                <li>
+                    <a href="/member/couponlist?parament=3">我的优惠券</a>
+                </li>
+
+                <li>
+                    <a href="/member/news">通知消息</a>
+                </li>
+                <li>
+                    <a href="/member/recommend">我的推荐</a>
+                </li>
+                <li>
+                    <a href="/service/receiptlist">售后服务</a>
+                </li>
+                <li>
+                    <a href="/User/user/creditslog">积分记录</a>
+                </li>
+
+
+            </ul>
+        </dd>
+        <dt>
+            <i class="iconfont">&#xe628;</i>
+            <b>订单中心</b>
+        </dt>
+        <dd>
+            <ul>
+                <li>
+                    <a href="/member/allorder">我的订单</a>
+                </li>
+                <li>
+                    <a href="/member/sc_sp">我的收藏</a>
+                </li>
+
+                #*
+                <li>
+                    <a href="">售后服务</a>
+                </li>
+                *#
+            </ul>
+        </dd>
+        <dt>
+            <i class="iconfont">&#xe628;</i>
+            <b>安全中心</b>
+        </dt>
+        <dd>
+            <ul>
+##                <li>
+##                    <a href="">忘记密码</a>
+##                </li>
+                <li>
+                    <a href="$!{rc.contextPath}/safety/seekpass">修改密码</a>
+                </li>
+                <li>
+                    <a href="$!{rc.contextPath}/safety/phone">手机号换绑</a>
+                </li>
+                <li>
+                    <a href="$!{rc.contextPath}/safety/email?type=0">邮箱换绑</a>
+                </li>
+            </ul>
+        </dd>
+    </dl>
+</div>

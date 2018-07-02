@@ -1,0 +1,646 @@
+@charset "utf-8";
+/**
+*Basic style sheets created by cmi 2016-09-24
+*包含样式重置、宽高、margin、padding、float、position、btn、font-size、color等;
+*/
+
+/*reset*/
+html {
+    font-family: '微软雅黑', "Microsoft YaHei", Arial, Helvetica, sans-serif !important;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+body {
+    font-family: '微软雅黑', "Microsoft YaHei", Arial, Helvetica, sans-serif !important;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, hr,
+pre, code, form, fieldset, legend,
+input, button, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a[href] {
+    color: #222;
+}
+
+img {
+    border: none;
+}
+
+b, em, font, strong, i {
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*文字排版*/
+.font12 {
+    font-size: 12px;
+}
+
+.font14 {
+    font-size: 14px;
+}
+
+.font16 {
+    font-size: 16px;
+}
+
+.font18 {
+    font-size: 18px;
+}
+
+.font20 {
+    font-size: 20px;
+}
+
+.textc {
+    text-align: center;
+}
+
+.textr {
+    text-align: right;
+}
+
+/*标准表单元素*/
+input {
+    box-sizing: border-box;
+    width: 120px;
+    height: 32px;
+    padding: 2px;
+    border: 1px solid #c4c4c4;
+}
+input[type='checkbox']{
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #c4c4c4;
+}
+
+a.cbtn, button, input[type='button'] {
+    box-sizing: border-box;
+    width: 120px;
+    height: 36px;
+    border: none;
+    background: #c4c4c4;
+    color: #404040;
+    font-family: '微软雅黑', "Microsoft YaHei", sans-serif;
+}
+
+a.cbtn {
+    line-height: 36px;
+    text-align: center;
+}
+
+a.cbtn.btnradius,
+button.btnradius,
+input[type='button'].btnradius {
+    border-radius: 4px;
+}
+
+a.cbtn:hover,
+button:hover,
+input[type='button']:hover {
+    cursor: pointer;
+}
+
+::-moz-focus-inner {
+    border: none;
+}
+
+/*银行卡图标颜色*/
+
+/*中国银行*/
+i.bank-boc {
+    color: #A71E32;
+}
+
+/*农业银行*/
+i.bank-abc {
+    color: #319C8B;
+}
+
+/*建设银行*/
+i.bank-ccb {
+    color: #0066B3;
+}
+
+/*工商银行*/
+i.bank-icbc {
+    color: #C80810;
+}
+
+/*邮储*/
+i.bank-psbc {
+    color: #00734B;
+}
+
+/*浦发*/
+i.bank-spdb {
+    color: #003473;
+}
+
+/*招商*/
+i.bank-cmbc {
+    color: #B3130F;
+}
+
+/*交通*/
+i.bank-comm {
+    color: #00367A;
+}
+
+/*广发*/
+i.bank-cgbc {
+    color: #E60021;
+}
+
+/*兴业银行*/
+i.bank-isbc {
+    color: #013DA0;
+}
+
+/*光大银行*/
+i.bank-eank {
+    color: #6A1385;
+}
+
+/*中信*/
+i.bank-eci {
+    color: #C9161D;
+}
+
+/*支付宝*/
+i.bank-ali {
+    color: #00A0E9;
+}
+
+/*辅助样式*/
+.disnone {
+    display: none !important;
+}
+
+.clel, .cler, .cleb {
+    overflow: hidden;
+}
+
+.clel::after {
+    display: block;
+    height: 0;
+    content: '';
+    clear: left;
+}
+
+.cler::after {
+    display: block;
+    height: 0;
+    content: '';
+    clear: right;
+}
+
+.cleb::after {
+    display: block;
+    height: 0;
+    content: '';
+    clear: both;
+}
+
+/*定位*/
+.posr {
+    position: relative;
+}
+
+.posa {
+    position: absolute;
+}
+
+/*float*/
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/*布局宽高边距填充*/
+.wid220{
+    width: 220px;
+}
+.wid600{
+    width: 600px;
+}
+.mt25{
+    margin-top: 25px;
+}
+.ml15{
+    margin-left: 15px;
+}
+.ml25{
+    margin-left: 25px;
+}
+.ml5{
+    margin-left: 5px;
+}
+.ml60{
+    margin-left: 60px;
+}
+
+/*gmall public style sheets*/
+.gmall_btn{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 36px;
+    background: #cc0b0b;
+    color: #fff;
+    font-size: 12px;
+}
+a.gmall_btn{
+    line-height: 36px;
+    text-align: center;
+}
+
+.gmall_rbtn{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 36px;
+    background: #cc0b0b;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 36px;
+}
+a.gmall_rbtn{
+    line-height: 36px;
+    text-align: center;
+}
+.gmall_gbtn{
+    background: #c0c0c0;
+}
+
+.gmall_btn:hover,
+.gmall_rbtn:hover{
+    cursor: pointer;
+}
+
+.gmall_console{
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+    line-height: 2.0;
+    margin-top: 60px;
+}
+
+input[type='radio']{
+    width:18px;
+    height: 18px;
+}
+a.gmall_btn:active,a.gmall_btn:focus,
+button:active,button:focus,
+input[type='button']:active,
+input[type='radio']:active,
+input[type='checkbox']:active{
+    outline: none;
+}
+
+
+
+/*外部引用 上传预览*/
+/* 上传预览图片 */
+.file_box{
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    position: relative;
+}
+
+.file_box .filein{
+    position:absolute;
+    top:0px;
+    left:4px;
+    z-index:-9;
+}
+.file_box .filebtn,
+.file_box .filepass{
+    display: block;
+    float: left;
+    height:inherit;
+    line-height:36px;
+    box-sizing: border-box;
+}
+.filebtn{
+    width: 26%;
+    background:#cc0b0b;
+    color:#fff;
+    text-align:center;
+    /*border-radius:4px 0 0 4px;*/
+    cursor:pointer;
+    font-size:12px;
+}
+.filepass{
+    width: 74%;
+    border:2px solid #cc0b0b;
+    /*border-radius:0 4px 4px 0;*/
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file_box #preview {
+    display: block;
+    box-sizing: border-box;
+    width:100%;
+    border:1px solid #ccc;
+    border-radius:2px;
+    clear:left;
+}
+
+
+/*外引用-ui-select css样式文件 不得修改*/
+.ui-select-wrap {
+    display: inline-block;
+    border: 1px solid #cc0b0b;
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    padding-right: 15px;
+    cursor: pointer;
+    font-size:14px;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: 8;
+    vertical-align: middle;
+}
+.ui-select-wrap:focus,
+.ui-select-wrap:active{
+    outline: none;
+    border-color: #c30303;
+}
+
+.ui-select-wrap.focus {
+    z-index: 9;
+}
+
+select.ui-select {
+    height: 32px;
+    vertical-align: top;
+    padding: 0 8px 0 4px;
+    border: 1px solid #b5b5b5;
+    font-size:14px;
+}
+
+.ui-select-wrap > select {
+    display: none;
+    height: 32px;
+    vertical-align: top;
+    padding: 0 8px;
+    border: 1px solid #b5b5b5;
+}
+.ui-select-wrap > select:active,
+.ui-select-wrap > select:visited,
+.ui-select-wrap > select:focus{
+    outline: none;
+}
+
+.ui-select-input {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    padding-left: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ui-select-arrow {
+    display: block;
+    position: absolute;
+    right:10px;
+    top: 40%;
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-width: 6px 5px 0 5px;
+    border-top-color: #999;
+}
+
+.ui-select-list {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 36px;
+    background-color: #fff;
+    border: 1px solid #c30303;
+    width: 100%;
+    overflow: auto;
+    /*max-height: 200px;*/
+    /*border-radius: 0 3px 3px 3px;*/
+}
+
+.ui-select-wrap.up .ui-select-list {
+    top: auto;
+    bottom: 30px;
+}
+
+.ui-select-wrap.focus .ui-select-list {
+    display: block;
+}
+
+.ui-select-list > li {
+    display: block;
+    line-height: 28px;
+    padding: 0 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ui-select-list > li:hover {
+    background-color: #ddd;
+}
+
+.ui-select-list > li.selected {
+    background-color: #c30303;
+    color: #fff;
+}
+
+.ui-select-list > li.disabled {
+    background-color: #f2f2f2;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.ui-select-list > li.disabled.selected {
+    /*background-color: #59ADFF;*/
+    color: #f2f2f2;
+    cursor: not-allowed;
+}
+
+.ui-select-wrap.disabled {
+    color: #999;
+    border-color: #ccc;
+    cursor: not-allowed;
+}
+
+.ui-select-wrap.disabled .ui-select-arrow {
+    border-top-color: #ccc;
+}
+
+/*外引用-ui-select css样式文件*/
+
+/*上传头像*/
+form#picForm{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 10;
+}
+
+.containerbox, .imageBox {
+    width: 400px;
+    overflow: hidden
+}
+
+.containerbox > div {
+    display: block;
+    overflow: hidden;
+    float: left
+}
+
+.containerbox {
+    margin: 40px auto 0;
+    font-family: 微软雅黑;
+    font-size: 12px;
+    background: #fff;
+    border: 1px solid #aaa
+}
+
+.action{
+    padding: 15px 0;
+}
+
+.action .Btnsty_peyton, a.upload-img {
+    font-size: 14px;
+    color: #FFF;
+    text-decoration: none
+}
+.action a.upload-img{
+    background: #cc0b0b;
+    width: 80px;
+    height: 28px;
+    display: inline-block;
+    border-radius: 30px;
+    line-height: 28px;
+    text-align: center;
+}
+.new-contentarea{
+    position: relative;
+}
+.new-contentarea input[type='file']{
+    display: block;
+    width: 80px;
+    height: 28px;
+    position: absolute;
+    top:0;
+    left: 0;
+    border-radius: 30px;
+    visibility: hidden;
+}
+.action >div ,
+.action >input,
+.action >button{
+    display: inline-block;
+    vertical-align: middle;
+    height: 28px;
+    border-radius: 28px;
+}
+.action .Btnsty_peyton{
+    width: 76px;
+    background: #cc0b0b;
+    font-size: 12px;
+}
+
+.containerbox:after {
+    display: block;
+    height: 0;
+    clear: left
+}
+
+.imageBox {
+    height: 400px;
+    background: no-repeat #fff;
+    cursor: move;
+    position: relative
+}
+
+.imageBox .thumbBox {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    border: 1px solid #666;
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, .5);
+    background: none
+}
+
+.imageBox .spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    line-height: 400px;
+    background: rgba(0, 0, 0, .7)
+}
+
+/*上传头像*/
+/*日历控件*/
+.jedaul .action{
+    padding: 0;
+}
+/*日历控件*/
+
+.gmall_ml10{
+    margin-left: 10px;
+}
+.gmall_mt80{
+    margin-top: 80px;
+}
+
+.validate_right ,.validate_right i{
+    color: green;
+}
+

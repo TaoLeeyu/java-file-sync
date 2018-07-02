@@ -1,0 +1,51 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+       http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <!-- 要调用的工作类-->
+    <bean id="autoScanFileForSyncService" class="com.treebear.starwifi.biz.autoscan.AutoScanFileForSyncService"/>
+
+    <!-- 定义调用对象和调用对象的方法A -->
+    <bean id="jobtaskA" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <!-- 调用的类 -->
+        <property name="targetObject">
+            <ref bean="autoScanFileForSyncService"/>
+        </property>
+        <!-- 调用类中的方法 -->
+        <property name="targetMethod">
+            <value>autoScan</value>
+        </property>
+    </bean>
+
+    <!-- 定义触发时间A -->
+    <bean id="doTimeA" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="jobtaskA"/>
+        </property>
+        <property name="cronExpression">
+            <!--测试每秒执行一次 0/1 * * * * ? * -->
+            <!--每个一小时执行一次 0 0 0/1 * * ?  -->
+            <!--每天下午15点执行 0 0 15 * * ?  -->
+            <value>0 0 15 * * ? </value>
+        </property>
+    </bean>
+
+
+    <!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序  -->
+    <bean id="startQuartz" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false" autowire="no">
+        <property name="triggers">
+            <list>
+                <ref bean="doTimeA"/>
+            </list>
+        </property>
+        <!--必须的设置 QuartzScheduler 延时启动，应用启动完后 QuartzScheduler 再启动 -->
+        <property name="startupDelay" value="5" />
+    </bean>
+
+</beans>

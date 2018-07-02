@@ -1,0 +1,8 @@
+#需要同步的文件夹路径
+sourcePath=F:\\webapp2
+#生成的zip文件夹临时存放路径
+zipFileTempPath=F:\\temp2
+#主java服务的请求地址
+url=http://127.0.0.1:8889/file_sync
+#linux的rsync命令
+linux.rsync.cmd="ping www.treebear.cn"

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="starwifi-slave:war">
+    <output-path>$PROJECT_DIR$/starwifi-slave/target</output-path>
+    <root id="archive" name="starwifi-slave.war">
+      <element id="artifact" artifact-name="starwifi-slave:war exploded" />
+    </root>
+  </artifact>
+</component>

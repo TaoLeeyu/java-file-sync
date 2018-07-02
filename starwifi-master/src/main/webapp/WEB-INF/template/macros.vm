@@ -1,0 +1,97 @@
+
+#*
+#分页（限制）显示
+#limitNum 限制显示的数量
+*#
+#macro(limitShow $paginator $limitNum)
+    #if($!paginator.total > $limitNum)
+        #set($paginator=$!PageLimit.pick($!paginator, $limitNum))
+    #end
+#end
+
+#*
+ * 生成翻页banner
+ * 作者: thinker
+ *#
+#macro(pageBanner $paginator $formId)
+    #if($!paginator && ($!paginator.pages > 0))
+    <div class="page paging" id="paging">
+        $!{paginator.total} 条信息 $!{paginator.pageNum}/$!{paginator.pages} 页
+        <a href="javascript:#if(!$paginator.hasPreviousPage) void(0)#else loadPage($!paginator.prePage)#end;" ><i>上一页</i></a>
+        &nbsp;
+        #if($paginator.navigatepageNums)
+            #foreach($num in $paginator.navigatepageNums)
+                #if($num==$paginator.pageNum)
+                    <span class="current">$num</span>&nbsp;
+                #else
+                    <a href="javascript:loadPage(${num});">&nbsp;${num}&nbsp;</a>&nbsp;
+                #end
+            #end
+        #end
+        <a href="javascript:#if(!$paginator.hasNextPage) void(0)#else loadPage($!paginator.nextPage)#end;" ><i>下一页</i></a>
+    </div>
+
+    <script type="text/javascript">
+        /**
+         * FIXME 翻页函数
+         * @param pageNum
+         */
+        function loadPage(pageNum) {
+            $("#pageNum").val(pageNum);
+            $("#$formId").submit();
+        }
+    </script>
+    #end
+#end
+
+
+#*
+ * 生成翻页banner
+ * 作者: think4ever@msn.com
+ *#
+#macro(page $paginator $formId)
+    #if($!paginator && $!paginator.pages > 0)
+    <div class="dataTables_paginate paging_full_numbers" id="dyntable_paginate">
+		<div class="dataTables_info" id="dyntable_info">
+			共<i class="blue">$!paginator.total</i>条记录，当前显示第&nbsp;<i id="pgNumber" class="blue">$!{paginator.pageNum}&nbsp;</i>页
+        </div>
+        <span class="first #if(1==$paginator.pageNum) paginate_button_disabled#else paginate_button#end" onclick="javascript:#if(1==$paginator.pageNum) void(0)#else loadPage(1)#end;" id="dyntable_first">首页</span>
+        <span class="previous #if(!$paginator.hasPreviousPage) paginate_button_disabled#else paginate_button#end"  onclick="javascript:#if($paginator.hasPreviousPage)loadPage($!paginator.prePage)#else void(0)#end;"  id="dyntable_previous"><i>&lt;</i>上一页</span>
+        <span>
+            #if($paginator.navigatepageNums)
+                #foreach($num in $paginator.navigatepageNums)
+                    <span class="#if($num==$paginator.pageNum) paginate_active#else paginate_button#end" onclick="javascript:#if($num==$paginator.pageNum) void(0)#else loadPage($num)#end;"">$num</span>
+                #end
+            #end
+        </span>
+        <span class="next #if(!$paginator.hasNextPage) paginate_button_disabled#else paginate_button#end" onclick="javascript:#if($paginator.hasNextPage)loadPage($!paginator.nextPage)#else void(0)#end;" id="dyntable_next">下一页<i>&gt;</i></span>
+        <span class="last #if($paginator.pages==$paginator.pageNum) paginate_button_disabled#else paginate_button#end" onclick="javascript:#if($paginator.pages==$paginator.pageNum) void(0)#else loadPage($!paginator.pages)#end;" id="dyntable_last">末页</span>
+    </div>
+    <script type="text/javascript">
+        /**
+         * FIXME 翻页函数
+         * @param pageNum
+         */
+        function loadPage(pageNum) {
+            $("#pageNum").val(pageNum);
+            $("#$formId").submit();
+        }
+    </script>
+    #end
+#end
+
+
+#*
+ * 根据枚举生成下来菜单
+ * 作者: think4ever@msn.com
+ *#
+#macro ( jdkEnumList $clazz)
+    #set($enumList = $jdkEnumUtil.getEnumList($clazz))
+    #if($enumList)
+        #foreach($enum in $enumList)
+        <option value="$enum.code">
+            $enum.value
+        </option>
+        #end
+    #end
+#end

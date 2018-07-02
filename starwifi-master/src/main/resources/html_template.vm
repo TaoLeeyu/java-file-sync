@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>${list.title}</title>
+    </head>
+    <body>
+        <h2>${list.title}</h2>
+        <table border="1" style="margin-left: 100px" >
+            <tr>
+                <th class="jobs-time">序号</th>
+                <th class="jobs-title">名称</th>
+                <th class="jobs-title">mobileNo</th>
+                <th class="jobs-title">email</th>
+            </tr>
+            #if($!list)
+                <tr>
+                    <td>${list.userId}</td>
+                    <td>${list.userName}</td>
+                    <td>${list.mobile}</td>
+                    <td>${list.email}</td>
+                </tr>
+            #end
+        </table>
+    </body>
+</html>

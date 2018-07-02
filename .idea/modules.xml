@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/starwifi.iml" filepath="$PROJECT_DIR$/starwifi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/starwifi-common/starwifi-common.iml" filepath="$PROJECT_DIR$/starwifi-common/starwifi-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/starwifi-master/starwifi-master.iml" filepath="$PROJECT_DIR$/starwifi-master/starwifi-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/starwifi-master/starwifi-server.iml" filepath="$PROJECT_DIR$/starwifi-master/starwifi-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/starwifi-service/starwifi-service.iml" filepath="$PROJECT_DIR$/starwifi-service/starwifi-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/starwifi-slave/starwifi-slave.iml" filepath="$PROJECT_DIR$/starwifi-slave/starwifi-slave.iml" />
+      <module fileurl="file://$PROJECT_DIR$/starwifi-slave/starwifi-web.iml" filepath="$PROJECT_DIR$/starwifi-slave/starwifi-web.iml" />
+    </modules>
+  </component>
+</project>

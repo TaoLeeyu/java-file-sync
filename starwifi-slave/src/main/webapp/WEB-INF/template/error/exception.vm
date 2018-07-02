@@ -1,0 +1,6 @@
+<html>
+<body>
+<h2>server error</h2>
+<p>$!exceptionMessage</p>
+</body>
+</html>

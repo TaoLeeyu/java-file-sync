@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+
+<!-- BEGIN HEAD -->
+    #parse('/layout/head.vm')
+<!-- END HEADER -->
+<body>
+<!-- BEGIN TOP -->
+    #parse('/layout/top-member.vm')
+<!-- END TOP -->
+<!-- BEGIN CONTAINER -->
+<section>
+    <div class="gui_main">
+
+        <div class="gmember_head">
+            <div>
+                <dl>
+                    <dt class="gmember_thead">
+                        #if($!{info.head_img})
+                            <img src="${rc.contextPath}$!{info.head_img}"/>
+                        #else
+                            <img src="${rc.contextPath}/static/images/basic/headpicman.png" alt="昵称">
+                        #end
+                        <a href="/member/accountinfo">编辑信息</a>
+                    </dt>
+                    <dt class="gmember_tname">
+                        <a class="nickname" href="/member/accountinfo">#if($!{info.nick_name})$!{info.nick_name}#else$!{info.user_name}#end<b></b></a>
+                        ##<a class="grade" href="/member/accountinfo">金币：<strong>2000</strong></a>
+                    </dt>
+                    <dd><a href="/member/address">我的地址</a></dd>
+                    <dd><a href="/member/packet">我的优惠信息</a></dd>
+                    <dd><a href="/member/news">未读消息#if($!{info.notRead})<span id="msgNum2">($!{info.notRead})</span>#end</a></dd>
+                </dl>
+            </div>
+            <ul>
+                <li><a href="/member/allorder?payStatus=0">待付款#if($!{waitPayNum}!=0)($!{waitPayNum})#end</a></li>
+                <li><a href="/member/allorder?shippingStatus=0">待发货#if($!{waitshippingNum}!=0)($!{waitshippingNum})#end</a></li>
+                <li><a href="/member/allorder?shippingStatus=1">待收货#if($!{waitCollectNum}!=0)($!{waitCollectNum})#end</a></li>
+                <li><a href="/member/allorder?orderStatus=2">已取消#if($!{qxddNum}!=0)($!{qxddNum})#end</a></li>
+                <li><a href="/member/allorder?refund=1">申请退款#if($!refundNum!=0)($!refundNum)#end</a></li>
+            </ul>
+        </div>
+
+        <div class="gmember_box">
+            <div class="gmall_left">
+                #parse('/layout/leftnav.vm')
+            </div>
+            <div class="gmall_right">
+                $screen_content
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- END CONTAINER -->
+
+<!-- BEGING FOOTER -->
+    #parse('/layout/footer.vm')
+<!-- END FOOTER -->
+</body>
+</html>

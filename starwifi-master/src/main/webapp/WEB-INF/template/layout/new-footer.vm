@@ -1,0 +1,60 @@
+#**
+ * 底部栏
+ * 版本号：17年度版
+ * 创建于 2017/10/16 @xming
+ * *#
+<div class="footercon footerbg" id="footer">
+    <div class="footone">
+        <div class="clearl">
+            <span>
+                <i  class="icon">&#xe604;</i>
+                <b>乐享优惠</b>
+            </span>
+            <span>
+                <i  class="icon">&#xe726;</i>
+                <b>品质无忧</b>
+            </span>
+            <span>
+                <i  class="icon">&#xe664;</i>
+                <b>极速发货</b>
+            </span>
+            <span>
+                <i  class="icon">&#xe641;</i>
+                <b>服务优享</b>
+            </span>
+        </div>
+    </div>
+    <div class="foottwo clearl">
+        <div class="footleft clearb floatl">
+            <span class="floatl mtop28">
+
+            </span>
+            <span class="floatr">
+                <img src="${rc.contextPath}/static/images/basic/genek_wechat.jpg" alt="" width="90">
+                <p class="margin0">扫码关注公众号</p>
+            </span>
+        </div>
+        <div class="footright floatl">
+            <h3>021-59885058</h3>
+            <p>全国服务热线</p>
+            <p>周一至周日9:00-17:00</p>
+            <a href="" class="icon">&#xe68f;在线客服</a>
+        </div>
+    </div>
+</div>
+<script>
+    //屏幕高度底部栏自动定位
+    function footFixed() {
+        var winh = $(window).height();
+        var webh = document.body.clientHeight;
+        if (winh>webh){
+            $('#footer').addClass('footfixed');
+        }else {
+            $('#footer').removeClass('footfixed');
+        }
+    };
+    footFixed();
+    $(window).resize(function () {
+        footFixed();
+    });
+</script>

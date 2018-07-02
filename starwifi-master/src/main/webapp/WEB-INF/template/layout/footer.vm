@@ -1,0 +1,100 @@
+<div class="gmallfoot">
+    <div>
+        <img src="${rc.contextPath}/static/images/basic/logopure.png"/>
+
+        <span>
+
+        </span>
+        <img width="114" src="${rc.contextPath}/static/images/basic/gmallcode.png" >
+    </div>
+</div>
+
+<div class="gui_fastnav">
+    <dl>
+        <dt onmouseover="showWord(this)" onmouseout="hideWord(this)"><a class="iconfont" href="$!{url}" target="_blank">&#xe605;</a></dt>
+        <dd>
+            <a >在线客服</a>
+        </dd>
+    </dl>
+    <dl>
+        <dt onmouseover="showCartNum(this)" onmouseout="hideWord(this)"><a class="iconfont" href="$!{rc.contextPath}/cart/myCart" target="_blank">&#xe6e4;</a></dt>
+        <dd>
+            <a></a>
+        </dd>
+    </dl>
+    <dl>
+        <dt onmouseover="showWord(this)" onmouseout="hideWord(this)"><a class="iconfont" href="#gmall_top">&#xe606;</a></dt>
+        <dd>
+            <a>返回顶部</a>
+        </dd>
+    </dl>
+</div>
+
+<div class="gmall_hintpanel" id="gmall_hint" style="display: none;">
+    <div class="gmall_hint">
+        <h6 class="iconfont">&#xe600;&nbsp;温馨提醒</h6>
+        <ul>
+            <li>
+                <p class="gmhint_msg">我是提示信息</p>
+            </li>
+            <li>
+                <button class="gmall_rbtn gmhint_colse" id="gmhint_colse" type="button">我知道了</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="gmall_hintpanel" id="gmall_confirm" style="display: none;">
+    <div class="gmall_hint">
+        <h6 class="iconfont">&#xe600;&nbsp;温馨提醒</h6>
+        <ul>
+            <li>
+                <p class="gmhint_msg">我是提示信息</p>
+            </li>
+            <li>
+                <button class="gmall_rbtn gmall_gbtn" id="gmconfirm_colse" type="button">取消</button>
+                <button class="gmall_rbtn gmhint_colse" id="gmconfirmbtn" type="button">确认</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function showWord(x){
+        $(x).next().show();
+    }
+    function hideWord(x){
+        $(x).next().hide();
+    }
+    //显示购物车的数量
+    function showCartNum(x){
+        $.ajax({
+            type: 'post',
+            url: '${rc.contextPath}/cart/myCartNum',
+            data: {},
+            dataType:"json",
+            async:false,
+            success: function (data) {
+                    //未登录
+                  if(data=="-2"){
+                      $(x).next().find("a").text("请先登录");
+                  }
+                  else if(data=="-1"){//服务器错误
+                      $(x).next().find("a").text("ERROR");
+                  }
+                  else{//正常
+                      $(x).next().find("a").text("购物车("+data+")");
+                  }
+
+                $(x).next().show();
+            }
+        });
+    }
+</script>
+<div style="display: none">
+##统计代码
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261873591'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261873591%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
